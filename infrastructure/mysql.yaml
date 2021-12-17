@@ -9,7 +9,7 @@ spec:
       type: helm
       properties:
         repoType: helm
-        url: https://mysql.github.io/mysql-operator/
+        url: https://mysql.github.io/mysql-operator
         chart: mysql-operator
         version: "8.0.26-2.0.2"
     - name: mysql-cluster
