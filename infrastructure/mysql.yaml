@@ -12,7 +12,6 @@ spec:
         url: https://presslabs.github.io/charts
         chart: mysql-operator
         version: "0.4.0"
-        platform: "linux/x86_64"
     - name: mysql-cluster
       type: raw
       dependsOn:
@@ -25,3 +24,4 @@ spec:
         spec:
           replicas: 1
           secretName: mysql-secret
+          image: "percona:5.7"
