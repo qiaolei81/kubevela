@@ -24,4 +24,4 @@ spec:
         spec:
           replicas: 1
           secretName: mysql-secret
-          image: "mariadb"
+          image: "mariadb:10.7"
