@@ -24,4 +24,5 @@ spec:
         spec:
           replicas: 1
           secretName: mysql-secret
-          image: "mysql:5.7"
+          image: "percona:5.7"
+          platform: "linux/amd64"
