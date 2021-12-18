@@ -24,4 +24,4 @@ spec:
         spec:
           replicas: 1
           secretName: mysql-secret
-          image: "percona:5.7-centos"
+          image: "mariadb"
