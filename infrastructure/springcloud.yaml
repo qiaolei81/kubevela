@@ -18,6 +18,10 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8888
+      traits:
+        - type: expose
+          properties:
+            port: 8888
     - name: eureka-server
       type: webservice
       properties:
@@ -31,3 +35,7 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8761
+      traits:
+        - type: expose
+          properties:
+            port: 8888
