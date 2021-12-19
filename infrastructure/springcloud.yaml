@@ -6,7 +6,7 @@ metadata:
 spec:
   components:
     - name: config-server
-      type: worker
+      type: webservice
       properties:
         image: springcloud/configserver
         port: 8888
@@ -18,12 +18,8 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8888
-      traits:
-        - type: expose
-          properties:
-            port: 8888
     - name: eureka-server
-      type: worker
+      type: webservice
       properties:
         image: springcloud/eureka
         port: 8761
@@ -35,8 +31,3 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8761
-      traits:
-        - type: expose
-          properties:
-            port: 8761
-
