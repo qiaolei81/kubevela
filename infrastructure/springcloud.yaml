@@ -19,9 +19,10 @@ spec:
           tcpSocket: 
             port: 8888
       traits:
-        - type: expose
+        - type: kservice
           properties:
-            port: 8888
+            http: 
+              server: 8888
     - name: eureka-server
       type: webservice
       properties:
@@ -36,6 +37,7 @@ spec:
           tcpSocket: 
             port: 8761
       traits:
-        - type: expose
+        - type: kservice
           properties:
-            port: 8888
+            http: 
+              server: 8761
