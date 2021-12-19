@@ -10,9 +10,11 @@ spec:
       properties:
         image: springcloud/configserver
         livenessProbe:
+          initialDelaySeconds: 120
           tcpSocket: 
             port: 8888
         redinessProbe:
+          initialDelaySeconds: 60
           tcpSocket: 
             port: 8888
     - name: eureka-server
@@ -20,9 +22,11 @@ spec:
       properties:
         image: springcloud/eureka
         livenessProbe:
+          initialDelaySeconds: 120
           tcpSocket: 
             port: 8761
         redinessProbe:
+          initialDelaySeconds: 60
           tcpSocket: 
             port: 8761
 
