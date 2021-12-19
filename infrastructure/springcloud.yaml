@@ -19,10 +19,9 @@ spec:
           tcpSocket: 
             port: 8888
       traits:
-        - type: kservice
+        - type: expose
           properties:
-            http: 
-              server: 8888
+            port: [8888] 
     - name: eureka-server
       type: worker
       properties:
@@ -36,9 +35,7 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8761
-            
       traits:
-        - type: kservice
+        - type: expose
           properties:
-            http: 
-              server: 8761
+            port: [8761] 
