@@ -6,7 +6,7 @@ metadata:
 spec:
   components:
     - name: config-server
-      type: webservice
+      type: worker
       properties:
         image: springcloud/configserver
         port: 8888
@@ -19,13 +19,11 @@ spec:
           tcpSocket: 
             port: 8888
       traits:
-        - type: ingress-1-20
+        - type: expose
           properties:
-            domain: config.example.com
-            http:
-              "/": 8888
+            port: 8888
     - name: eureka-server
-      type: webservice
+      type: worker
       properties:
         image: springcloud/eureka
         port: 8761
@@ -38,9 +36,7 @@ spec:
           tcpSocket: 
             port: 8761
       traits:
-        - type: ingress-1-20
+        - type: expose
           properties:
-            domain: eureka.example.com
-            http:
-              "/": 8761
+            port: 8761
 
