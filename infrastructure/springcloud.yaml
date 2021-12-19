@@ -1,7 +1,7 @@
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
-  name: mysql
+  name: springcloud
   namespace: default
 spec:
   components:
@@ -18,6 +18,12 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8888
+      traits:
+        - type: ingress-1-20
+          properties:
+            domain: config.example.com
+            http:
+              "/": 8888
     - name: eureka-server
       type: webservice
       properties:
