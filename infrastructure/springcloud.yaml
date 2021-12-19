@@ -6,16 +6,23 @@ metadata:
 spec:
   components:
     - name: config-server
-      type: helm
+      type: worker
       properties:
-        repoType: helm
-        url: https://kiwigrid.github.io/charts
-        chart: spring-cloud-config-server
-        version: "0.1.3"
+        image: springcloud/configserver
+        livenessProbe:
+          tcpSocket: 
+            port: 8888
+        redinessProbe:
+          tcpSocket: 
+            port: 8888
     - name: eureka-server
-      type: helm
+      type: worker
       properties:
-        repoType: helm
-        url: https://ygqygq2.github.io/charts
-        chart: eureka
-        version: "1.0.0"
+        image: springcloud/eureka
+        livenessProbe:
+          tcpSocket: 
+            port: 8761
+        redinessProbe:
+          tcpSocket: 
+            port: 8761
+
