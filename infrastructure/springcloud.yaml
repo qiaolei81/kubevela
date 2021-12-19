@@ -36,6 +36,7 @@ spec:
           initialDelaySeconds: 60
           tcpSocket: 
             port: 8761
+            
       traits:
         - type: kservice
           properties:
