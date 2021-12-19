@@ -6,9 +6,10 @@ metadata:
 spec:
   components:
     - name: config-server
-      type: worker
+      type: webservice
       properties:
         image: springcloud/configserver
+        port: 8888
         livenessProbe:
           initialDelaySeconds: 120
           tcpSocket: 
@@ -18,9 +19,10 @@ spec:
           tcpSocket: 
             port: 8888
     - name: eureka-server
-      type: worker
+      type: webservice
       properties:
         image: springcloud/eureka
+        port: 8761
         livenessProbe:
           initialDelaySeconds: 120
           tcpSocket: 
